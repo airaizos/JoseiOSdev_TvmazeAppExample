@@ -50,6 +50,7 @@
 		F096298E2BAB8C9A00E50467 /* ShowCatalogueWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096298D2BAB8C9A00E50467 /* ShowCatalogueWireframe.swift */; };
 		F09629912BAB8CB500E50467 /* ShowCatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096298F2BAB8CB500E50467 /* ShowCatalogueViewController.swift */; };
 		F09629922BAB8CB500E50467 /* ShowCatalogueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09629902BAB8CB500E50467 /* ShowCatalogueViewController.xib */; };
+		F0E7B8D42BAC92640030DDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8D62BAC92640030DDEC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		F096298D2BAB8C9A00E50467 /* ShowCatalogueWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCatalogueWireframe.swift; sourceTree = "<group>"; };
 		F096298F2BAB8CB500E50467 /* ShowCatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCatalogueViewController.swift; sourceTree = "<group>"; };
 		F09629902BAB8CB500E50467 /* ShowCatalogueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCatalogueViewController.xib; sourceTree = "<group>"; };
+		F0E7B8D52BAC92640030DDEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0E7B8D72BAC928D0030DDEC /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,7 @@
 				F09629542BAB534700E50467 /* Constants.swift */,
 				F09629562BAB65A900E50467 /* TVMazeViewController.swift */,
 				F09629602BAB668800E50467 /* Protocols.swift */,
+				F0E7B8D62BAC92640030DDEC /* Localizable.strings */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -451,6 +455,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = F07EED812BAA559700728D2C;
 			productRefGroup = F07EED8B2BAA559700728D2C /* Products */;
@@ -473,6 +478,7 @@
 				F07EEDCA2BAACA7C00728D2C /* Services.plist in Resources */,
 				F09629922BAB8CB500E50467 /* ShowCatalogueViewController.xib in Resources */,
 				F07EED9D2BAA559800728D2C /* LaunchScreen.storyboard in Resources */,
+				F0E7B8D42BAC92640030DDEC /* Localizable.strings in Resources */,
 				F07EED9A2BAA559800728D2C /* Assets.xcassets in Resources */,
 				F07EED952BAA559700728D2C /* Main.storyboard in Resources */,
 				F09629882BAB8C4700E50467 /* ShowDetailsViewController.xib in Resources */,
@@ -585,6 +591,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F0E7B8D62BAC92640030DDEC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0E7B8D52BAC92640030DDEC /* en */,
+				F0E7B8D72BAC928D0030DDEC /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -593,6 +608,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -656,6 +672,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -720,8 +737,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -753,8 +770,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

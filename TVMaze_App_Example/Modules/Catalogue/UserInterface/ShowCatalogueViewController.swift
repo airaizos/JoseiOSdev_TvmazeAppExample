@@ -8,6 +8,7 @@
 import UIKit
 
 class ShowCatalogueViewController: TVMazeViewController {
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     var shows:[ShowModel?] = [] {
@@ -32,7 +33,8 @@ class ShowCatalogueViewController: TVMazeViewController {
     }
     
     private func setControllerText(){
-        self.navigationItem.title = "CatalogueModuleTitle".localizable()
+        self.lblTitle.text = "CatalogueModuleTitle".localizable()
+        //self.navigationItem.title = "CatalogueModuleTitle".localizable()
     }
     
     deinit {
@@ -84,11 +86,11 @@ extension ShowCatalogueViewController:UITableViewDelegate,UITableViewDataSource{
         switch indexPath.section {
         case 0:
             let cell:ShowCatalogueTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "ShowCatalogueTableViewCell", for: indexPath) as! ShowCatalogueTableViewCell
-//            cell.fillCell(business: self.businesses[indexPath.row], indexPath: indexPath, presenter: self.presenter)
+            cell.fillCell(show: self.shows[indexPath.row], indexPath: indexPath, presenter: self.presenter)
             return cell
         default:
             let cell:ShowCatalogueTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "ShowCatalogueTableViewCell", for: indexPath) as! ShowCatalogueTableViewCell
-//            cell.fillCell(business: self.businesses[indexPath.row], indexPath: indexPath, presenter: self.presenter)
+            cell.fillCell(show: self.shows[indexPath.row], indexPath: indexPath, presenter: self.presenter)
             return cell
         }
     }
@@ -103,9 +105,9 @@ extension ShowCatalogueViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 80
+            return 100
         default:
-            return 80
+            return 100
         }
     }
     

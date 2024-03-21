@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TVMaze_App_Example
+
+  Created by José Caballero on 21/03/24.
+  
+*/
+
+"CatalogueModuleTitle" = "TV Shows";
+"FavoritesModuleTitle" = "Favorite Shows";

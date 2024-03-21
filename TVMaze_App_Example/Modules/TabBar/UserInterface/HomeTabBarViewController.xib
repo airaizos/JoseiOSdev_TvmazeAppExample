@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeTabBarViewController" customModule="TVMaze_App_Example" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                    <integer key="value" value="0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="btnCatalogueTabBar" destination="d71-Ug-TMR" id="wX0-n9-EgX"/>
+                <outlet property="btnFavoritesTabBar" destination="WiI-WQ-PyE" id="pqu-00-hb4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZb-a4-gB0">
+                    <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                    <subviews>
+                        <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-Q6-YS0">
+                            <rect key="frame" x="0.0" y="765" width="414" height="49"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <items>
+                                <tabBarItem title="Item" id="d71-Ug-TMR"/>
+                                <tabBarItem title="Item" id="WiI-WQ-PyE"/>
+                            </items>
+                        </tabBar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="O4q-Q6-YS0" secondAttribute="trailing" id="E87-tl-FD3"/>
+                        <constraint firstItem="O4q-Q6-YS0" firstAttribute="leading" secondItem="hZb-a4-gB0" secondAttribute="leading" id="MOF-Q0-D7A"/>
+                        <constraint firstAttribute="bottom" secondItem="O4q-Q6-YS0" secondAttribute="bottom" id="i3C-c7-AdY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hZb-a4-gB0" secondAttribute="bottom" id="Oym-wT-P09"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hZb-a4-gB0" secondAttribute="trailing" id="Sfj-mC-lO2"/>
+                <constraint firstItem="hZb-a4-gB0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sxo-oe-lR9"/>
+                <constraint firstItem="hZb-a4-gB0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uCC-sA-2jD"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+</document>

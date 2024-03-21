@@ -20,6 +20,7 @@ class ViewController: TVMazeViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
 //            _ = ShowCatalogueWireframe(navigationController: self.navigationController)
 //            _ = ShowFavoritesWireframe(navigationController: self.navigationController)
+            _ = HomeTabBarWireframe(navigationController: self.navigationController ?? UINavigationController())
         })
     }
     

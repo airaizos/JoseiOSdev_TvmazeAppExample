@@ -56,6 +56,11 @@
 		F0E7B8E22BAC9F820030DDEC /* ShowFavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */; };
 		F0E7B8E32BAC9F820030DDEC /* ShowFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */; };
 		F0E7B8E42BAC9F820030DDEC /* ShowFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */; };
+		F0E7B8EE2BACA40A0030DDEC /* HomeTabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8E82BACA40A0030DDEC /* HomeTabBarInteractor.swift */; };
+		F0E7B8EF2BACA40A0030DDEC /* HomeTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8E92BACA40A0030DDEC /* HomeTabBarPresenter.swift */; };
+		F0E7B8F02BACA40A0030DDEC /* HomeTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8EB2BACA40A0030DDEC /* HomeTabBarWireframe.swift */; };
+		F0E7B8F12BACA40A0030DDEC /* HomeTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8EC2BACA40A0030DDEC /* HomeTabBarViewController.xib */; };
+		F0E7B8F22BACA40A0030DDEC /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8ED2BACA40A0030DDEC /* HomeTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +135,11 @@
 		F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesWireframe.swift; sourceTree = "<group>"; };
 		F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowFavoritesViewController.xib; sourceTree = "<group>"; };
 		F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesViewController.swift; sourceTree = "<group>"; };
+		F0E7B8E82BACA40A0030DDEC /* HomeTabBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarInteractor.swift; sourceTree = "<group>"; };
+		F0E7B8E92BACA40A0030DDEC /* HomeTabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarPresenter.swift; sourceTree = "<group>"; };
+		F0E7B8EB2BACA40A0030DDEC /* HomeTabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarWireframe.swift; sourceTree = "<group>"; };
+		F0E7B8EC2BACA40A0030DDEC /* HomeTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabBarViewController.xib; sourceTree = "<group>"; };
+		F0E7B8ED2BACA40A0030DDEC /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +310,7 @@
 		F09629762BAB870300E50467 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F0E7B8E62BACA40A0030DDEC /* TabBar */,
 				F096297A2BAB899F00E50467 /* ShowDetails */,
 				F09629792BAB898E00E50467 /* Catalogue */,
 				F0E7B8D82BAC9F820030DDEC /* Favorites */,
@@ -405,6 +416,34 @@
 				F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */,
 				F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */,
 				F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		F0E7B8E62BACA40A0030DDEC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8E72BACA40A0030DDEC /* ApplicationLogic */,
+				F0E7B8EA2BACA40A0030DDEC /* UserInterface */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F0E7B8E72BACA40A0030DDEC /* ApplicationLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8E82BACA40A0030DDEC /* HomeTabBarInteractor.swift */,
+				F0E7B8E92BACA40A0030DDEC /* HomeTabBarPresenter.swift */,
+			);
+			path = ApplicationLogic;
+			sourceTree = "<group>";
+		};
+		F0E7B8EA2BACA40A0030DDEC /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8EB2BACA40A0030DDEC /* HomeTabBarWireframe.swift */,
+				F0E7B8EC2BACA40A0030DDEC /* HomeTabBarViewController.xib */,
+				F0E7B8ED2BACA40A0030DDEC /* HomeTabBarViewController.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -522,6 +561,7 @@
 				F0E7B8D42BAC92640030DDEC /* Localizable.strings in Resources */,
 				F07EED9A2BAA559800728D2C /* Assets.xcassets in Resources */,
 				F07EED952BAA559700728D2C /* Main.storyboard in Resources */,
+				F0E7B8F12BACA40A0030DDEC /* HomeTabBarViewController.xib in Resources */,
 				F09629882BAB8C4700E50467 /* ShowDetailsViewController.xib in Resources */,
 				F09629632BAB6DCA00E50467 /* Enviorement.plist in Resources */,
 			);
@@ -555,11 +595,13 @@
 				F09629612BAB668800E50467 /* Protocols.swift in Sources */,
 				F09629572BAB65A900E50467 /* TVMazeViewController.swift in Sources */,
 				F09629712BAB834300E50467 /* Network.swift in Sources */,
+				F0E7B8EF2BACA40A0030DDEC /* HomeTabBarPresenter.swift in Sources */,
 				F07EED922BAA559700728D2C /* ViewController.swift in Sources */,
 				F092258C2BAC0E3A00C8F8E8 /* ShowCatalogueTableViewCell.swift in Sources */,
 				F0E7B8E12BAC9F820030DDEC /* ShowFavoritesPresenter.swift in Sources */,
 				F09629872BAB8C4700E50467 /* ShowDetailsViewController.swift in Sources */,
 				F07EED982BAA559700728D2C /* TVMaze_App_Example.xcdatamodeld in Sources */,
+				F0E7B8EE2BACA40A0030DDEC /* HomeTabBarInteractor.swift in Sources */,
 				F09629802BAB8BEA00E50467 /* ShowDetailsInteractor.swift in Sources */,
 				F07EED8E2BAA559700728D2C /* AppDelegate.swift in Sources */,
 				F096298C2BAB8C8300E50467 /* ShowCataloguePresenter.swift in Sources */,
@@ -575,7 +617,9 @@
 				F09629692BAB827E00E50467 /* Links.swift in Sources */,
 				F09629912BAB8CB500E50467 /* ShowCatalogueViewController.swift in Sources */,
 				F09629732BAB835600E50467 /* Rating.swift in Sources */,
+				F0E7B8F22BACA40A0030DDEC /* HomeTabBarViewController.swift in Sources */,
 				F07EED902BAA559700728D2C /* SceneDelegate.swift in Sources */,
+				F0E7B8F02BACA40A0030DDEC /* HomeTabBarWireframe.swift in Sources */,
 				F07EEDC82BAACA6800728D2C /* TVMazeDataStore.swift in Sources */,
 				F096295B2BAB665200E50467 /* Utils.swift in Sources */,
 				F07EEDC42BAAC8FB00728D2C /* ShowModel.swift in Sources */,

@@ -33,8 +33,7 @@ class ShowFavoritesViewController: TVMazeViewController {
     }
     
     private func setControllerText(){
-        self.lblTitle.text = "CatalogueModuleTitle".localizable()
-        //self.navigationItem.title = "CatalogueModuleTitle".localizable()
+        self.lblTitle.text = "FavoritesModuleTitle".localizable()
     }
     
     deinit {

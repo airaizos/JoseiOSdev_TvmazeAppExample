@@ -55,8 +55,10 @@ class TVMazeViewController: UIViewController, ViewProtocol {
     
    func removeLoader() {
         if(self.loaderActicity != nil){
+            DispatchQueue.main.async{
                 self.loaderActicity?.removeFromSuperview()
                 self.loaderActicity = nil
+            }
         }
     }
     

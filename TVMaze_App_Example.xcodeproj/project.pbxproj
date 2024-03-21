@@ -51,6 +51,11 @@
 		F09629912BAB8CB500E50467 /* ShowCatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096298F2BAB8CB500E50467 /* ShowCatalogueViewController.swift */; };
 		F09629922BAB8CB500E50467 /* ShowCatalogueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09629902BAB8CB500E50467 /* ShowCatalogueViewController.xib */; };
 		F0E7B8D42BAC92640030DDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8D62BAC92640030DDEC /* Localizable.strings */; };
+		F0E7B8E02BAC9F820030DDEC /* ShowFavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DA2BAC9F820030DDEC /* ShowFavoritesInteractor.swift */; };
+		F0E7B8E12BAC9F820030DDEC /* ShowFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DB2BAC9F820030DDEC /* ShowFavoritesPresenter.swift */; };
+		F0E7B8E22BAC9F820030DDEC /* ShowFavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */; };
+		F0E7B8E32BAC9F820030DDEC /* ShowFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */; };
+		F0E7B8E42BAC9F820030DDEC /* ShowFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +125,11 @@
 		F09629902BAB8CB500E50467 /* ShowCatalogueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCatalogueViewController.xib; sourceTree = "<group>"; };
 		F0E7B8D52BAC92640030DDEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0E7B8D72BAC928D0030DDEC /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F0E7B8DA2BAC9F820030DDEC /* ShowFavoritesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesInteractor.swift; sourceTree = "<group>"; };
+		F0E7B8DB2BAC9F820030DDEC /* ShowFavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesPresenter.swift; sourceTree = "<group>"; };
+		F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesWireframe.swift; sourceTree = "<group>"; };
+		F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowFavoritesViewController.xib; sourceTree = "<group>"; };
+		F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +302,7 @@
 			children = (
 				F096297A2BAB899F00E50467 /* ShowDetails */,
 				F09629792BAB898E00E50467 /* Catalogue */,
+				F0E7B8D82BAC9F820030DDEC /* Favorites */,
 				F09629772BAB871000E50467 /* CustomSplash */,
 			);
 			path = Modules;
@@ -367,6 +378,35 @@
 				F09629812BAB8C0900E50467 /* ShowDetailsPresenter.swift */,
 			);
 			path = ApplicationLogic;
+			sourceTree = "<group>";
+		};
+		F0E7B8D82BAC9F820030DDEC /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8D92BAC9F820030DDEC /* ApplicationLogic */,
+				F0E7B8DC2BAC9F820030DDEC /* UserInterface */,
+			);
+			name = Favorites;
+			path = TVMaze_App_Example/Modules/Favorites;
+			sourceTree = SOURCE_ROOT;
+		};
+		F0E7B8D92BAC9F820030DDEC /* ApplicationLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8DA2BAC9F820030DDEC /* ShowFavoritesInteractor.swift */,
+				F0E7B8DB2BAC9F820030DDEC /* ShowFavoritesPresenter.swift */,
+			);
+			path = ApplicationLogic;
+			sourceTree = "<group>";
+		};
+		F0E7B8DC2BAC9F820030DDEC /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7B8DD2BAC9F820030DDEC /* ShowFavoritesWireframe.swift */,
+				F0E7B8DE2BAC9F820030DDEC /* ShowFavoritesViewController.xib */,
+				F0E7B8DF2BAC9F820030DDEC /* ShowFavoritesViewController.swift */,
+			);
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F092258D2BAC0E3A00C8F8E8 /* ShowCatalogueTableViewCell.xib in Resources */,
+				F0E7B8E32BAC9F820030DDEC /* ShowFavoritesViewController.xib in Resources */,
 				F07EEDCA2BAACA7C00728D2C /* Services.plist in Resources */,
 				F09629922BAB8CB500E50467 /* ShowCatalogueViewController.xib in Resources */,
 				F07EED9D2BAA559800728D2C /* LaunchScreen.storyboard in Resources */,
@@ -516,6 +557,7 @@
 				F09629712BAB834300E50467 /* Network.swift in Sources */,
 				F07EED922BAA559700728D2C /* ViewController.swift in Sources */,
 				F092258C2BAC0E3A00C8F8E8 /* ShowCatalogueTableViewCell.swift in Sources */,
+				F0E7B8E12BAC9F820030DDEC /* ShowFavoritesPresenter.swift in Sources */,
 				F09629872BAB8C4700E50467 /* ShowDetailsViewController.swift in Sources */,
 				F07EED982BAA559700728D2C /* TVMaze_App_Example.xcdatamodeld in Sources */,
 				F09629802BAB8BEA00E50467 /* ShowDetailsInteractor.swift in Sources */,
@@ -529,6 +571,7 @@
 				F07EEDCC2BAACA8F00728D2C /* Interface.swift in Sources */,
 				F096295F2BAB667700E50467 /* Extensions.swift in Sources */,
 				F09629842BAB8C1D00E50467 /* ShowDetailsWireframe.swift in Sources */,
+				F0E7B8E02BAC9F820030DDEC /* ShowFavoritesInteractor.swift in Sources */,
 				F09629692BAB827E00E50467 /* Links.swift in Sources */,
 				F09629912BAB8CB500E50467 /* ShowCatalogueViewController.swift in Sources */,
 				F09629732BAB835600E50467 /* Rating.swift in Sources */,
@@ -536,7 +579,9 @@
 				F07EEDC82BAACA6800728D2C /* TVMazeDataStore.swift in Sources */,
 				F096295B2BAB665200E50467 /* Utils.swift in Sources */,
 				F07EEDC42BAAC8FB00728D2C /* ShowModel.swift in Sources */,
+				F0E7B8E42BAC9F820030DDEC /* ShowFavoritesViewController.swift in Sources */,
 				F09629822BAB8C0900E50467 /* ShowDetailsPresenter.swift in Sources */,
+				F0E7B8E22BAC9F820030DDEC /* ShowFavoritesWireframe.swift in Sources */,
 				F09629752BAB836700E50467 /* Schedule.swift in Sources */,
 				F096296D2BAB831200E50467 /* Externals.swift in Sources */,
 			);

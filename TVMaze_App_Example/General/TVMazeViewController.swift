@@ -68,8 +68,8 @@ class TVMazeViewController: UIViewController, ViewProtocol {
         Utils.showSimpleAlert(title: Constants.APP_TITLE, message: error, controller: self, actions: [okAction], completion: nil)
     }
     
-    func showMessage(_ message:String, actions:[UIAlertAction], completion:(() -> Void)?) {
-        Utils.showSimpleAlert(title: Constants.APP_TITLE, message: message, controller: self, actions: actions, completion: completion)
+    func showMessage(title: String? = nil, _ message:String, actions:[UIAlertAction], completion:(() -> Void)?) {
+        Utils.showSimpleAlert(title: title ?? Constants.APP_TITLE, message: message, controller: self, actions: actions, completion: completion)
     }
 
     deinit {

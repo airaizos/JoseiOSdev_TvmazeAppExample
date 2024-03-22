@@ -31,6 +31,26 @@ class ShowCataloguePresenter: PresenterProtocol {
         (self.view as? ShowCatalogueViewController)?.setShows(shows: shows)
     }
     
+    func isFavoriteShow(showId:Int64) -> Bool {
+        return (self.interactor as? ShowCatalogueInteractor)?.isFavoriteShow(showId: showId) ?? false
+    }
+    
+    func saveFavorite(favoriteModel:FavoriteShowModel){
+        (self.interactor as? ShowCatalogueInteractor)?.saveFavorite(favoriteModel: favoriteModel)
+    }
+    
+    func correctSaveFavorite(favoriteModel:FavoriteShowModel) {
+        (self.view as? ShowCatalogueViewController)?.correctSaveFavorite(favoriteModel:favoriteModel)
+    }
+    
+    func deleteFavorite(favorite:FavoriteShowModel) {
+        (self.interactor as? ShowCatalogueInteractor)?.deleteFavorite(favorite: favorite)
+    }
+    
+    func correctDeleteFavorite(favorite:FavoriteShowModel) {
+        (self.view as? ShowCatalogueViewController)?.correctDeleteFavorite(favorite:favorite)
+    }
+    
     func goToShowDetails(navigationController: UINavigationController?, show:ShowModel?) {
         (self.wireframe as? ShowCatalogueWireframe)?.goToShowDetails(navigationController: navigationController, show: show)
     }

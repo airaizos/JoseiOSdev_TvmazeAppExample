@@ -61,6 +61,8 @@
 		F0E7B8F02BACA40A0030DDEC /* HomeTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8EB2BACA40A0030DDEC /* HomeTabBarWireframe.swift */; };
 		F0E7B8F12BACA40A0030DDEC /* HomeTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E7B8EC2BACA40A0030DDEC /* HomeTabBarViewController.xib */; };
 		F0E7B8F22BACA40A0030DDEC /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8ED2BACA40A0030DDEC /* HomeTabBarViewController.swift */; };
+		F0E7B8F42BACB70E0030DDEC /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8F32BACB70E0030DDEC /* CoreDataController.swift */; };
+		F0E7B8F62BADDECC0030DDEC /* FavoriteShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B8F52BADDECC0030DDEC /* FavoriteShowModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		F0E7B8EB2BACA40A0030DDEC /* HomeTabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarWireframe.swift; sourceTree = "<group>"; };
 		F0E7B8EC2BACA40A0030DDEC /* HomeTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabBarViewController.xib; sourceTree = "<group>"; };
 		F0E7B8ED2BACA40A0030DDEC /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		F0E7B8F32BACB70E0030DDEC /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		F0E7B8F52BADDECC0030DDEC /* FavoriteShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShowModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 				F09629702BAB834300E50467 /* Network.swift */,
 				F09629722BAB835600E50467 /* Rating.swift */,
 				F09629742BAB836700E50467 /* Schedule.swift */,
+				F0E7B8F52BADDECC0030DDEC /* FavoriteShowModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				F07EED962BAA559700728D2C /* TVMaze_App_Example.xcdatamodeld */,
+				F0E7B8F32BACB70E0030DDEC /* CoreDataController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -592,7 +598,9 @@
 				F096298A2BAB8C7200E50467 /* ShowCatalogueInteractor.swift in Sources */,
 				F096296B2BAB82DE00E50467 /* Image.swift in Sources */,
 				F09629672BAB825D00E50467 /* SelfLink.swift in Sources */,
+				F0E7B8F42BACB70E0030DDEC /* CoreDataController.swift in Sources */,
 				F09629612BAB668800E50467 /* Protocols.swift in Sources */,
+				F0E7B8F62BADDECC0030DDEC /* FavoriteShowModel.swift in Sources */,
 				F09629572BAB65A900E50467 /* TVMazeViewController.swift in Sources */,
 				F09629712BAB834300E50467 /* Network.swift in Sources */,
 				F0E7B8EF2BACA40A0030DDEC /* HomeTabBarPresenter.swift in Sources */,

@@ -34,7 +34,7 @@ class HomeTabBarViewController: UITabBarController, ViewProtocol {
         catalogue.tag=0
         favorites.tag=1
         
-        let items = [catalogue,favorites]
+//        let items = [catalogue,favorites]
         self.btnCatalogueTabBar = catalogue
         self.btnFavoritesTabBar = favorites
         //initViewControllers
@@ -59,8 +59,8 @@ class HomeTabBarViewController: UITabBarController, ViewProtocol {
         //TO SET TITLE IN CONTROLLERS : self.tabBarController?.navigationItem.title = ""
         
         self.selectedIndex=2
-        let number = self.toolbarItems?.count
-        debugPrint("<<<< number of items: \(number)")
+//        let number = self.toolbarItems?.count
+//        debugPrint("<<<< number of items: \(number)")
         
     }
     

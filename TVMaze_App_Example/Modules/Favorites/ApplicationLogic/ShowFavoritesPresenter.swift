@@ -31,6 +31,14 @@ class ShowFavoritesPresenter: PresenterProtocol {
         (self.view as? ShowFavoritesViewController)?.setShows(shows: shows)
     }
     
+    func deleteFavorite(favorite:FavoriteShowModel) {
+        (self.interactor as? ShowFavoritesInteractor)?.deleteFavorite(favorite: favorite)
+    }
+    
+    func correctDeleteFavorite(favorite:FavoriteShowModel) {
+        (self.view as? ShowFavoritesViewController)?.correctDeleteFavorite(favorite:favorite)
+    }
+    
     func goToShowDetails(navigationController: UINavigationController?, show:ShowModel?) {
         (self.wireframe as? ShowFavoritesWireframe)?.goToShowDetails(navigationController: navigationController, show: show)
     }

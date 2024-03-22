@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class Constants {
-    static let APP_TITLE = "TVMaze_App_Example"
+    static let APP_TITLE = "Oops,algosaliómal!"//TVMaze_App_Example"
     static let DATA_BASE = "TVMaze_App_Example"
     static let SERVER_PRODUCTION_URL_PORT = "https://api.tvmaze.com"
     static let SERVER_TEST_URL_PORT = "https://api.tvmaze.com"
@@ -30,4 +30,6 @@ class Constants {
     }
     static let IS_IPAD_DEVICE:Bool = UIDevice.current.userInterfaceIdiom == .pad
     static let DEVICE_TYPE:UIUserInterfaceIdiom = UIDevice.current.userInterfaceIdiom
+    
+    static let ENTITY:String = "FavoriteShow"
 }

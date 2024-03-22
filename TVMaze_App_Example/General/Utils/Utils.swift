@@ -18,4 +18,25 @@ class Utils {
         }
         controller.present(alert, animated: true, completion: completion)
     }
+    
+    static func openURLWithSafari(url:String, errorAnswer:@escaping ErrorAnswer){
+            guard let newUrl = URL(string: url) else {
+                errorAnswer("ErrorURL".localizable())
+                return }
+            if Utils.verifyUrl(urlString: url){
+                UIApplication.shared.open(newUrl)
+            }else{
+                errorAnswer("ErrorURL".localizable())
+                return
+            }
+        }
+        
+        static func verifyUrl (urlString: String?) -> Bool {
+            if let urlString = urlString {
+                if let url = URL(string: urlString) {
+                    return UIApplication.shared.canOpenURL(url)
+                }
+            }
+            return false
+        }
 }

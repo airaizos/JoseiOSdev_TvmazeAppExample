@@ -8,3 +8,10 @@
 
 "CatalogueModuleTitle" = "TV Shows";
 "FavoritesModuleTitle" = "Favorite Shows";
+"Favorite" = "Favorite";
+"Delete" = "Delete";
+"DeleteAlertMessage" = "Are you sure you want to remove this item from favorites?";
+"Cancel" = "Cancel";
+"saveCoreDataError" = "Hubo un problema al guardar este show de TV. ¿Quieres intentar nuevamente?";
+"deleteCoreDataError" = "Hubo un problema al borrar este show de TV. ¿Quieres intentar nuevamente?";
+"RetryAction" = "Retry";

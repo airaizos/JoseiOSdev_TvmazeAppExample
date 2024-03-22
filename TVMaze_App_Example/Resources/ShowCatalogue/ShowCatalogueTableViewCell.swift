@@ -41,4 +41,19 @@ class ShowCatalogueTableViewCell: UITableViewCell {
         
     }
     
+    func fillCell(show:FavoriteShowModel?, indexPath:IndexPath, presenter:PresenterProtocol?) {
+        self.presenter = presenter
+        self.tag = indexPath.row
+        
+        self.imgShow.imageFromUrl(urlString: show?.imageMedium ?? "", force: false, placeholder: nil)
+        self.lblName.text = show?.name ?? ""
+        
+        let image = UIImage(named: "rightRow")?.withRenderingMode(.alwaysTemplate)
+        if #available(iOS 13.0, *) {
+            self.imgRow.tintColor = .systemGray
+        }
+        self.imgRow.image = image
+        
+    }
+    
 }

@@ -26,6 +26,12 @@ class ShowFavoritesViewController: TVMazeViewController {
         // Do any additional setup after loading the view.
         self.initController()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.getData()
+    }
 
     private func initController(){
         self.setControllerText()
@@ -34,6 +40,33 @@ class ShowFavoritesViewController: TVMazeViewController {
     
     private func setControllerText(){
         self.lblTitle.text = "FavoritesModuleTitle".localizable()
+    }
+
+    private func deleteFavorite(indexPath: IndexPath) {
+        guard let show = self.shows[indexPath.row] else {
+            self.errorDeleteCoreDataItem(indexPath: indexPath)
+            return
+        }
+        guard let id = show.id else {
+            self.errorDeleteCoreDataItem(indexPath: indexPath)
+            return
+        }
+        let favorite = FavoriteShowModel(id: id, show: show)
+        (self.presenter as? ShowFavoritesPresenter)?.deleteFavorite(favorite: favorite)
+    }
+    
+    private func errorDeleteCoreDataItem(indexPath:IndexPath) {
+        let cancelAction = UIAlertAction(title: "Cancel".localizable(), style: .default)
+        let retryAction = UIAlertAction(title: "RetryAction".localizable(), style: .default, handler: {_ in
+            self.deleteFavorite(indexPath: indexPath)
+        })
+        (self.presenter as? ShowFavoritesPresenter)?.showMessage("deleteCoreDataError".localizable(), actions: [cancelAction,retryAction], completion: nil)
+    }
+    
+    func correctDeleteFavorite(favorite:FavoriteShowModel) {
+        self.shows.removeAll { show in
+            show?.id ?? 0 == favorite.id
+        }
     }
     
     deinit {
@@ -60,7 +93,7 @@ extension ShowFavoritesViewController:UITableViewDelegate,UITableViewDataSource{
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.backgroundColor = .clear
-        self.getData()
+//        self.getData()
     }
     
     func registerTableViewCells() {
@@ -115,6 +148,31 @@ extension ShowFavoritesViewController:UITableViewDelegate,UITableViewDataSource{
         UIView.animate(withDuration: 0.5) {
             cell.alpha = 1
         }
+    }
+    
+    //EditingStyles
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localizable()) { (action, indexPath) in
+            //deleteaction
+            let cancelAction = UIAlertAction(title: "Cancel".localizable(), style: .cancel)
+            let deleteAction = UIAlertAction(title: "Delete".localizable(), style: .destructive) { alertAction in
+                self.deleteFavorite(indexPath: indexPath)
+            }
+            self.showMessage(title:"TVMaze_App_Example","DeleteAlertMessage".localizable(), actions: [cancelAction, deleteAction], completion: nil)
+        }
+
+        return [deleteAction]
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Implement delete functionality.
+        tableView.reloadData()
     }
     
 }

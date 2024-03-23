@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class Utils {
-    typealias ErrorAnswer = (_ error:String) -> Void
+    typealias ErrorAnswer = (_ error:String, _ url:String) -> Void
     
     static func showSimpleAlert(title:String, message:String, controller:UIViewController, actions:[UIAlertAction], completion:(() -> Void)?){
         let alert=UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -21,12 +21,12 @@ class Utils {
     
     static func openURLWithSafari(url:String, errorAnswer:@escaping ErrorAnswer){
             guard let newUrl = URL(string: url) else {
-                errorAnswer("ErrorURL".localizable())
+                errorAnswer("ErrorURL".localizable(), url)
                 return }
             if Utils.verifyUrl(urlString: url){
                 UIApplication.shared.open(newUrl)
             }else{
-                errorAnswer("ErrorURL".localizable())
+                errorAnswer("ErrorURL".localizable(), url)
                 return
             }
         }

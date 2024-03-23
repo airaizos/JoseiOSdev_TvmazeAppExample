@@ -17,7 +17,15 @@ class ShowCatalogueInteractor: InteractorProtocol {
     }
     
     func getShows(controller: TVMazeViewController?) {
-        TVMazeDataStore(controller).getShows(correctAnswer: self.correctShowsAnswer(_:), errorAnswer: self.observerError(_:))
+        TVMazeDataStore(controller).getShows(correctAnswer: self.correctShowsAnswer(_:), errorAnswer: self.errorGetShows(_:))
+    }
+    
+    func errorGetShows(_ error:String) {
+        let cancelAction = UIAlertAction(title: "Cancel".localizable(), style: .default)
+        let retryAction = UIAlertAction(title: "RetryAction".localizable(), style: .default, handler: {_ in
+            self.getShows(controller: (self.presenter?.view as? TVMazeViewController))
+        })
+        (self.presenter as? ShowCataloguePresenter)?.showMessage("GeneralServicesError".localizable(), actions: [cancelAction, retryAction], completion: nil)
     }
     
     func correctShowsAnswer(_ data:Data) {
@@ -27,7 +35,7 @@ class ShowCatalogueInteractor: InteractorProtocol {
             shows = try decoder.decode([ShowModel].self, from: data)
             (self.presenter as? ShowCataloguePresenter)?.setShows(shows: shows)
         }catch let error {
-            self.observerError("Error decoder: \(error.localizedDescription)")
+            self.errorGetShows("Error decoder: \(error.localizedDescription)")
         }
     }
     
@@ -44,7 +52,6 @@ class ShowCatalogueInteractor: InteractorProtocol {
                 return false
             }
         }catch{
-            debugPrint("<<<<<< Error al extraer videoTutorial con url de coredata")
             return false
         }
     }
@@ -61,7 +68,7 @@ class ShowCatalogueInteractor: InteractorProtocol {
                 return []
             }
         }catch{
-            debugPrint("<<<<<< Error al extraer videoTutorial con url de coredata")
+            
             return []
         }
     }

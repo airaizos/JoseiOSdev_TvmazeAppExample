@@ -25,7 +25,7 @@ class TVMazeViewController: UIViewController, ViewProtocol {
     }
     
     func showLoader() {
-        var sc: UIWindow? = nil
+        var sc: UIWindow? = self.view.window
 
         if #available(iOS 13.0, *) {
             sc=UIApplication.shared.connectedScenes
@@ -40,7 +40,7 @@ class TVMazeViewController: UIViewController, ViewProtocol {
             self.removeLoader()
         }
         self.loaderActicity = UIActivityIndicatorView()
-        self.loaderActicity?.frame = sc!.frame//self.view.frame
+        self.loaderActicity?.frame = sc?.frame ?? UIScreen.main.bounds //self.view.frame
         self.loaderActicity?.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.25)
         self.loaderActicity.color = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
         
@@ -63,13 +63,19 @@ class TVMazeViewController: UIViewController, ViewProtocol {
     }
     
     func observerError(_ error:String) {
-        self.removeLoader()
-        let okAction = UIAlertAction(title: "ok", style: .default)
-        Utils.showSimpleAlert(title: Constants.APP_TITLE, message: error, controller: self, actions: [okAction], completion: nil)
+        
+        DispatchQueue.main.async {
+            self.removeLoader()
+            let okAction = UIAlertAction(title: "ok", style: .default)
+            Utils.showSimpleAlert(title: Constants.APP_TITLE, message: error, controller: self, actions: [okAction], completion: nil)
+        }
     }
     
     func showMessage(title: String? = nil, _ message:String, actions:[UIAlertAction], completion:(() -> Void)?) {
-        Utils.showSimpleAlert(title: title ?? Constants.APP_TITLE, message: message, controller: self, actions: actions, completion: completion)
+        DispatchQueue.main.async {
+            self.removeLoader()
+            Utils.showSimpleAlert(title: title ?? Constants.APP_TITLE, message: message, controller: self, actions: actions, completion: completion)
+        }
     }
 
     deinit {

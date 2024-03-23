@@ -33,6 +33,13 @@ class ShowCatalogueViewController: TVMazeViewController {
             self.getData()
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        DispatchQueue.main.async {
+            self.removeLoader()
+        }
+    }
 
     private func initController(){
         self.setControllerText()

@@ -17,7 +17,7 @@ class ShowFavoritesInteractor: InteractorProtocol {
     }
     
     func getShows(controller: TVMazeViewController?) {
-        TVMazeDataStore(controller).getShows(correctAnswer: self.correctShowsAnswer(_:), errorAnswer: self.observerError(_:))
+        TVMazeDataStore(controller).getShows(correctAnswer: self.correctShowsAnswer(_:), errorAnswer: self.errorGetShows(_:))
     }
     
     func correctShowsAnswer(_ data:Data) {
@@ -34,8 +34,16 @@ class ShowFavoritesInteractor: InteractorProtocol {
             }
             (self.presenter as? ShowFavoritesPresenter)?.setShows(shows: favoriteShows)
         }catch let error {
-            self.observerError("Error decoder: \(error.localizedDescription)")
+            self.errorGetShows("Error decoder: \(error.localizedDescription)")
         }
+    }
+    
+    func errorGetShows(_ error:String) {
+        let cancelAction = UIAlertAction(title: "Cancel".localizable(), style: .default)
+        let retryAction = UIAlertAction(title: "RetryAction".localizable(), style: .default, handler: {_ in
+            self.getShows(controller: (self.presenter?.view as? TVMazeViewController))
+        })
+        (self.presenter as? ShowFavoritesPresenter)?.showMessage("GeneralServicesError".localizable(), actions: [cancelAction, retryAction], completion: nil)
     }
     
     func getFavoritesShows() -> [FavoriteShowModel]{
@@ -71,7 +79,6 @@ class ShowFavoritesInteractor: InteractorProtocol {
                 return false
             }
         }catch{
-            debugPrint("<<<<<< Error al extraer videoTutorial con url de coredata")
             return false
         }
     }
@@ -88,7 +95,6 @@ class ShowFavoritesInteractor: InteractorProtocol {
                 return []
             }
         }catch{
-            debugPrint("<<<<<< Error al extraer videoTutorial con url de coredata")
             return []
         }
     }

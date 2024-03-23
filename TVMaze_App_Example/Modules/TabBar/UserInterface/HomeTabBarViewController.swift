@@ -29,7 +29,7 @@ class HomeTabBarViewController: UITabBarController, ViewProtocol {
         //Setting TabBar
 //        let tabbar = UITabBarController()//for new tabbarcontroller
         //init tabBArItems
-        let catalogue = UITabBarItem(title: "CatalogueModuleTitle".localizable(), image: UIImage(named: "catalogue"), selectedImage: nil)
+        let catalogue = UITabBarItem(title: "CatalogueModuleTitle".localizable(), image: UIImage(named: "movies"), selectedImage: nil)
         let favorites = UITabBarItem(title: "FavoritesModuleTitle" .localizable(), image: UIImage(named: "favorites"), selectedImage: nil)
         catalogue.tag=0
         favorites.tag=1
@@ -46,11 +46,14 @@ class HomeTabBarViewController: UITabBarController, ViewProtocol {
         c0.tabBarItem = catalogue
         c1.tabBarItem = favorites
         
-        self.tabBar.tintColor = .blue
         if #available(iOS 13.0, *) {
+            self.tabBar.tintColor = .systemBackground
             self.tabBar.backgroundColor = .label
+            self.tabBar.unselectedItemTintColor = .systemGray
         } else {
+            self.tabBar.tintColor = .black
             self.tabBar.backgroundColor = .white
+            self.tabBar.unselectedItemTintColor = .gray
         }
         
         self.viewControllers=controllers

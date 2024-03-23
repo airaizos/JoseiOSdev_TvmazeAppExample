@@ -15,3 +15,13 @@
 "saveCoreDataError" = "Hubo un problema al guardar este show de TV. ¿Quieres intentar nuevamente?";
 "deleteCoreDataError" = "Hubo un problema al borrar este show de TV. ¿Quieres intentar nuevamente?";
 "RetryAction" = "Retry";
+"openShow" = "Open Show";
+"GeneralServicesError" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"ErrorURL" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"Invalid response" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"No data" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"Client error" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"Server error" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"Unexpected response code:" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"No internet connection" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"Invalid URL" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";

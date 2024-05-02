@@ -38,7 +38,7 @@ class HomeTabBarViewController: UITabBarController, ViewProtocol {
         self.btnCatalogueTabBar = catalogue
         self.btnFavoritesTabBar = favorites
         //initViewControllers
-        let c0 = ShowCatalogueWireframe.getController()
+        let c0 = CatalogueViewController()
         let c1 = ShowFavoritesWireframe.getController()
         let controllers:[UIViewController]=[c0,c1]
         

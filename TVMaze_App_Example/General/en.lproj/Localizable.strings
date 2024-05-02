@@ -25,3 +25,4 @@
 "Unexpected response code:" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
 "No internet connection" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
 "Invalid URL" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";
+"No rating" = "No rating";

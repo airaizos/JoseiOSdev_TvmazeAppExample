@@ -14,6 +14,12 @@ class DataStore: NSObject {
     typealias CorrectHandlerDownloadData = (_ data:Data) -> Void
     typealias MethodHandlerProgress = (_ progress:Double) -> Void
     
+    var urlProtocol: URLProtocol.Type?
+    
+    init(urlProtocol: URLProtocol.Type? = nil) {
+        self.urlProtocol = urlProtocol
+    }
+    
     let version: String = {
         let path = Bundle.main.url(forResource: "Services", withExtension: "plist")
         let dic = NSDictionary(contentsOf: path!) as? [String: Any]
@@ -47,6 +53,6 @@ class DataStore: NSObject {
         return Constants.SERVER_TEST_URL_PORT
     }
     
-    lazy var serviceManager =  { ServiceManager() }()
+    lazy var serviceManager =  { ServiceManager(urlProtocol: urlProtocol) }()
     
 }

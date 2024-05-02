@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0525B22BE3C3A500B92531 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0525B12BE3C3A500B92531 /* URLSessionMock.swift */; };
+		3A17F4C42BE2C70600C5649D /* CatalogueViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A17F4C32BE2C70600C5649D /* CatalogueViewController.storyboard */; };
+		3A17F4C82BE2C7C300C5649D /* CatalogueViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A17F4C72BE2C7C300C5649D /* CatalogueViewCell.xib */; };
+		3A17F4CA2BE2C8A700C5649D /* ShowTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A17F4C92BE2C8A700C5649D /* ShowTests.json */; };
+		3A17F4CC2BE2C95900C5649D /* CatalogueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A17F4CB2BE2C95900C5649D /* CatalogueViewCell.swift */; };
+		3A17F4CE2BE2C98100C5649D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A17F4CD2BE2C98100C5649D /* CatalogueViewController.swift */; };
+		3A7D57832BE396A700B37496 /* CatalogueModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D57822BE396A700B37496 /* CatalogueModelLogic.swift */; };
 		F07EED8E2BAA559700728D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EED8D2BAA559700728D2C /* AppDelegate.swift */; };
 		F07EED902BAA559700728D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EED8F2BAA559700728D2C /* SceneDelegate.swift */; };
 		F07EED922BAA559700728D2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EED912BAA559700728D2C /* ViewController.swift */; };
@@ -83,6 +90,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0525B12BE3C3A500B92531 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		3A17F4C32BE2C70600C5649D /* CatalogueViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatalogueViewController.storyboard; sourceTree = "<group>"; };
+		3A17F4C72BE2C7C300C5649D /* CatalogueViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogueViewCell.xib; sourceTree = "<group>"; };
+		3A17F4C92BE2C8A700C5649D /* ShowTests.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ShowTests.json; sourceTree = "<group>"; };
+		3A17F4CB2BE2C95900C5649D /* CatalogueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewCell.swift; sourceTree = "<group>"; };
+		3A17F4CD2BE2C98100C5649D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
+		3A7D57822BE396A700B37496 /* CatalogueModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueModelLogic.swift; sourceTree = "<group>"; };
 		F07EED8A2BAA559700728D2C /* TVMaze_App_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMaze_App_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07EED8D2BAA559700728D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07EED8F2BAA559700728D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +185,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A17F4C22BE2C6F100C5649D /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				3A17F4CD2BE2C98100C5649D /* CatalogueViewController.swift */,
+				3A17F4C32BE2C70600C5649D /* CatalogueViewController.storyboard */,
+				3A17F4CB2BE2C95900C5649D /* CatalogueViewCell.swift */,
+				3A17F4C72BE2C7C300C5649D /* CatalogueViewCell.xib */,
+				3A7D57822BE396A700B37496 /* CatalogueModelLogic.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
 		F07EED812BAA559700728D2C = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				F07EEDA72BAA559900728D2C /* TVMaze_App_ExampleTests.swift */,
+				3A17F4C92BE2C8A700C5649D /* ShowTests.json */,
+				3A0525B12BE3C3A500B92531 /* URLSessionMock.swift */,
 			);
 			path = TVMaze_App_ExampleTests;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 		F09629792BAB898E00E50467 /* Catalogue */ = {
 			isa = PBXGroup;
 			children = (
+				3A17F4C22BE2C6F100C5649D /* MVC */,
 				F096297C2BAB89B900E50467 /* ApplicationLogic */,
 				F096297B2BAB89AD00E50467 /* UserInterface */,
 			);
@@ -560,12 +589,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F092258D2BAC0E3A00C8F8E8 /* ShowCatalogueTableViewCell.xib in Resources */,
+				3A17F4C82BE2C7C300C5649D /* CatalogueViewCell.xib in Resources */,
 				F0E7B8E32BAC9F820030DDEC /* ShowFavoritesViewController.xib in Resources */,
 				F07EEDCA2BAACA7C00728D2C /* Services.plist in Resources */,
 				F09629922BAB8CB500E50467 /* ShowCatalogueViewController.xib in Resources */,
 				F07EED9D2BAA559800728D2C /* LaunchScreen.storyboard in Resources */,
 				F0E7B8D42BAC92640030DDEC /* Localizable.strings in Resources */,
 				F07EED9A2BAA559800728D2C /* Assets.xcassets in Resources */,
+				3A17F4C42BE2C70600C5649D /* CatalogueViewController.storyboard in Resources */,
 				F07EED952BAA559700728D2C /* Main.storyboard in Resources */,
 				F0E7B8F12BACA40A0030DDEC /* HomeTabBarViewController.xib in Resources */,
 				F09629882BAB8C4700E50467 /* ShowDetailsViewController.xib in Resources */,
@@ -577,6 +608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A17F4CA2BE2C8A700C5649D /* ShowTests.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +638,7 @@
 				F0E7B8EF2BACA40A0030DDEC /* HomeTabBarPresenter.swift in Sources */,
 				F07EED922BAA559700728D2C /* ViewController.swift in Sources */,
 				F092258C2BAC0E3A00C8F8E8 /* ShowCatalogueTableViewCell.swift in Sources */,
+				3A17F4CE2BE2C98100C5649D /* CatalogueViewController.swift in Sources */,
 				F0E7B8E12BAC9F820030DDEC /* ShowFavoritesPresenter.swift in Sources */,
 				F09629872BAB8C4700E50467 /* ShowDetailsViewController.swift in Sources */,
 				F07EED982BAA559700728D2C /* TVMaze_App_Example.xcdatamodeld in Sources */,
@@ -616,9 +649,11 @@
 				F096296F2BAB832E00E50467 /* Country.swift in Sources */,
 				F096295D2BAB666800E50467 /* ImageCache.swift in Sources */,
 				F07EEDCE2BAACAA400728D2C /* ServiceManager.swift in Sources */,
+				3A17F4CC2BE2C95900C5649D /* CatalogueViewCell.swift in Sources */,
 				F09629652BAB823500E50467 /* PreviousEpisode.swift in Sources */,
 				F096298E2BAB8C9A00E50467 /* ShowCatalogueWireframe.swift in Sources */,
 				F07EEDCC2BAACA8F00728D2C /* Interface.swift in Sources */,
+				3A7D57832BE396A700B37496 /* CatalogueModelLogic.swift in Sources */,
 				F096295F2BAB667700E50467 /* Extensions.swift in Sources */,
 				F09629842BAB8C1D00E50467 /* ShowDetailsWireframe.swift in Sources */,
 				F0E7B8E02BAC9F820030DDEC /* ShowFavoritesInteractor.swift in Sources */,
@@ -643,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0525B22BE3C3A500B92531 /* URLSessionMock.swift in Sources */,
 				F07EEDA82BAA559900728D2C /* TVMaze_App_ExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,7 +789,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -811,7 +847,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -836,7 +872,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -869,7 +905,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

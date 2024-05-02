@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Links: Codable {
+struct Links: Codable,Hashable {
     let selfLink: SelfLink?
     let previousEpisode: PreviousEpisode?
 

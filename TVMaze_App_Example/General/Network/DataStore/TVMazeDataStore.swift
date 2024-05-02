@@ -10,7 +10,10 @@ import UIKit
 class TVMazeDataStore: DataStore {
     var controller:TVMazeViewController?
     
-    override init() {}
+    override init(urlProtocol: URLProtocol.Type? = nil) {
+        super.init()
+        self.urlProtocol = urlProtocol
+    }
     
     init(_ controller:TVMazeViewController?) {
         if controller != nil{
@@ -25,7 +28,24 @@ class TVMazeDataStore: DataStore {
         let webService = server + version + servicePrefix
         
         self.serviceManager.requestGet(url: webService, correctAnswerHandler: correctAnswer, incorrectAnswerHandler: errorAnswer)
-        
     }
     
+    func getShowsAsync() async throws -> [ShowModel] {
+        try await withCheckedThrowingContinuation { continuation in
+            
+            getShows { data in
+                do {
+                    let decodedData = try JSONDecoder().decode([ShowModel].self, from: data)
+                    continuation.resume(returning: decodedData)
+                    
+                } catch let error {
+                    continuation.resume(throwing: error)
+                }
+            } errorAnswer: { msg in
+                continuation.resume(throwing: Error.self as! Error)
+            }
+        }
+    }
 }
+
+

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Rating: Codable {
+struct Rating: Codable,Hashable {
     let average: Double?
 }

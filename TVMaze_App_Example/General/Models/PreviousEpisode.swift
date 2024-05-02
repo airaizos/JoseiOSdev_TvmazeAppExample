@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PreviousEpisode: Codable {
+struct PreviousEpisode: Codable,Hashable {
     let href: String?
 }

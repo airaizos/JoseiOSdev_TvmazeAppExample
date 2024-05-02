@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CatalogueViewCell" customModule="TVMaze_App_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="de0-NT-F16">
+                    <rect key="frame" x="10" y="10" width="100" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="XSd-im-gTf"/>
+                        <constraint firstAttribute="height" constant="140" id="dqw-4n-B6v"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="One upon a time in Wonderland" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoT-kT-9ba">
+                    <rect key="frame" x="120" y="10" width="234" height="67.666666666666671"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pET-Xg-QCp">
+                    <rect key="frame" x="120" y="132" width="234" height="18"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOo-MS-QVK">
+                    <rect key="frame" x="120" y="88" width="234" height="18"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pET-Xg-QCp" secondAttribute="bottom" constant="10" id="15U-UT-YDM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tOo-MS-QVK" secondAttribute="trailing" constant="16" id="2B6-ay-Tfr"/>
+                <constraint firstItem="YoT-kT-9ba" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="5Cb-IT-uhn"/>
+                <constraint firstItem="YoT-kT-9ba" firstAttribute="leading" secondItem="de0-NT-F16" secondAttribute="trailing" constant="10" id="GfT-jP-VVB"/>
+                <constraint firstItem="pET-Xg-QCp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tOo-MS-QVK" secondAttribute="bottom" constant="26" id="JGB-wd-3rP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pET-Xg-QCp" secondAttribute="trailing" constant="16" id="KSy-LZ-7fj"/>
+                <constraint firstItem="pET-Xg-QCp" firstAttribute="leading" secondItem="de0-NT-F16" secondAttribute="trailing" constant="10" id="Msj-6L-6Eb"/>
+                <constraint firstItem="de0-NT-F16" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="SMp-Ma-Guh"/>
+                <constraint firstItem="de0-NT-F16" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="cAA-9W-Awi"/>
+                <constraint firstItem="tOo-MS-QVK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YoT-kT-9ba" secondAttribute="bottom" constant="10" id="fSb-Vj-IW5"/>
+                <constraint firstAttribute="bottom" secondItem="de0-NT-F16" secondAttribute="bottom" constant="10" id="hSA-gh-pkF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YoT-kT-9ba" secondAttribute="trailing" constant="16" id="n2H-LI-hOW"/>
+                <constraint firstItem="tOo-MS-QVK" firstAttribute="leading" secondItem="de0-NT-F16" secondAttribute="trailing" constant="10" id="y7k-FV-fwV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="genresLabel" destination="pET-Xg-QCp" id="I3l-Gn-5Co"/>
+                <outlet property="imageLabel" destination="de0-NT-F16" id="1dE-7l-NQh"/>
+                <outlet property="ratingLabel" destination="tOo-MS-QVK" id="XfE-0p-pu5"/>
+                <outlet property="titleLabel" destination="YoT-kT-9ba" id="NSR-YB-ah0"/>
+            </connections>
+            <point key="canvasLocation" x="-87.022900763358777" y="-238.02816901408451"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

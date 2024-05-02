@@ -64,6 +64,7 @@ extension UIImageView{
                 }
                 return
             } else {
+                //TODO: Cambiar
                 URLSession.shared.dataTask(with: NSURL(string: urlStringRemplace)! as URL, completionHandler: { (data, response, error) -> Void in
                     if error != nil {
                         return
@@ -84,5 +85,11 @@ extension UIImageView{
             }
         }
     }
+    
+}
+
+
+extension Notification.Name {
+    static let shows = Notification.Name("SHOW")
     
 }

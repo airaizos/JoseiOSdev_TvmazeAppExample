@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShowModel: Codable {
+struct ShowModel: Codable, Identifiable, Hashable,Equatable {
     let id: Int?
     let url: String?
     let name: String?

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SelfLink: Codable {
+struct SelfLink: Codable,Hashable {
     let href: String?
 }

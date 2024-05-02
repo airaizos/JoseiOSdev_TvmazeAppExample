@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Externals: Codable {
+struct Externals: Codable, Hashable {
     let tvrage: Int?
     let thetvdb: Int?
     let imdb: String?

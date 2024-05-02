@@ -12,6 +12,34 @@ class ServiceManager {
     typealias MethodHandler2 = (_ sampleParameter: String) -> Void
     let timeInterval = 30
     
+    var urlProtocol: URLProtocol.Type?
+    
+    init(urlProtocol: URLProtocol.Type? = nil) {
+        self.urlProtocol = urlProtocol
+    }
+    
+    private var session: URLSession {
+        if let urlProtocol {
+            let configuration = URLSessionConfiguration.ephemeral
+            configuration.protocolClasses = [urlProtocol]
+            return URLSession(configuration: configuration)
+            
+        } else {
+            
+            let config = URLSessionConfiguration.default
+            config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+            return URLSession(configuration: config)
+        }
+    }
+    
+    private func setRequest(url: URL) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = TimeInterval(self.timeInterval)
+        return request
+    }
+    
     fileprivate func handle(response: URLResponse?, data: Data?, error: Error?, correctAnswerHandler: @escaping MethodHandler1, incorrectAnswerHandler: @escaping MethodHandler2) {
         if let error = error {
             self.errorHandle(error: error, incorrectAnswerHandler: incorrectAnswerHandler)
@@ -62,15 +90,7 @@ class ServiceManager {
             return
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = TimeInterval(self.timeInterval)
-        
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        let session = URLSession(configuration: config)
-        
+        let request = setRequest(url: url)
         
         session.dataTask(with: request) { data, response, error in
             

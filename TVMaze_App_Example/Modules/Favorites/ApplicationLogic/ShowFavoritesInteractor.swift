@@ -46,22 +46,12 @@ class ShowFavoritesInteractor: InteractorProtocol {
         (self.presenter as? ShowFavoritesPresenter)?.showMessage("GeneralServicesError".localizable(), actions: [cancelAction, retryAction], completion: nil)
     }
     
-    func getFavoritesShows() -> [FavoriteShowModel]{
-        var favorites:[FavoriteShowModel]=[]
-        let coreDataController = CoreDataController()
-        let fetchRequest: NSFetchRequest<FavoriteShow> = FavoriteShow.fetchRequest()
+    func getFavoritesShows() -> [FavoriteShowModel] {
         do {
-            let searchResults = try coreDataController.getContext().fetch(fetchRequest)
-            if searchResults.count > 0 {
-                for favorite in searchResults {
-                    favorites.append(FavoriteShowModel(show: favorite))
-                }
-                return favorites
-            }else{
-                return favorites
-            }
+            let container = CoreDataController()
+            return try container.getFavoritesShows()
         } catch {
-            return favorites
+            return []
         }
         
     }

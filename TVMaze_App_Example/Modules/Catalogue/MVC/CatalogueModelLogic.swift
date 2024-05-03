@@ -11,9 +11,11 @@ final class CatalogueModelLogic {
     static let shared = CatalogueModelLogic()
     
     let network: TVMazeDataStore
+    let favoriteLogic: FavoriteModelLogic
     
-    init(network: TVMazeDataStore = .init()) {
+    init(network: TVMazeDataStore = .init(), favoriteLogic: FavoriteModelLogic = .shared) {
         self.network = network
+        self.favoriteLogic = favoriteLogic
     }
     
     private var shows = [ShowModel]() {
@@ -38,4 +40,14 @@ final class CatalogueModelLogic {
             s1.rating?.average ?? 0 > s2.rating?.average ?? 0
         })
     }
+    
+    func isFavorite(id: Int) -> Bool {
+        favoriteLogic.isFavorite(showId: id)
+    }
+    
+    @discardableResult
+    func toggleFavorite(show: ShowModel) -> Bool {
+        favoriteLogic.saveFavorite(show: show)
+    }
+   
 }

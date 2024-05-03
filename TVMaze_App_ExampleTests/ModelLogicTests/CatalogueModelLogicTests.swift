@@ -8,7 +8,7 @@
 import XCTest
 @testable import TVMaze_App_Example
 
-final class TVMaze_App_ExampleTests: XCTestCase {
+final class CatalogueModelLogicTests: XCTestCase {
     var sut: CatalogueModelLogic!
     var network: TVMazeDataStore!
     
@@ -22,7 +22,7 @@ final class TVMaze_App_ExampleTests: XCTestCase {
         sut = nil
     }
 
-    func testGetShows_ShouldBe() async throws {
+    func testGetShows_ShouldBe3() async throws {
         let initialCount = sut.showsCount
         try await sut.getShows()
        
@@ -30,5 +30,12 @@ final class TVMaze_App_ExampleTests: XCTestCase {
         
         XCTAssertEqual(finalCount, 3)
         XCTAssertGreaterThan(finalCount,initialCount)
+    }
+    
+    func testIsFavorite_ShouldBeTrue() async throws {
+        
+        try await sut.getShows()
+        
+        
     }
 }

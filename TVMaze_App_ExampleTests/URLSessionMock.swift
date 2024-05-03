@@ -8,7 +8,7 @@
 import Foundation
 
 final class URLSessionMock: URLProtocol {
-    let showsUrl = Bundle(for: TVMaze_App_ExampleTests.self).url(forResource: "ShowTests", withExtension: "json")!
+    let showsUrl = Bundle(for: CatalogueModelLogicTests.self).url(forResource: "ShowTests", withExtension: "json")!
     
     override class func canInit(with request: URLRequest) -> Bool {
         true

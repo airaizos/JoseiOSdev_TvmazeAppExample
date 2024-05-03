@@ -8,8 +8,10 @@
 import Foundation
 import CoreData
 
-class CoreDataController {
+final class CoreDataController: DataBaseContainer {
     // MARK: - Core Data stack
+    
+    static let shared = CoreDataController()
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -40,7 +42,7 @@ class CoreDataController {
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         context.perform {
             if context.hasChanges {
@@ -60,6 +62,50 @@ class CoreDataController {
         let persistenContainer = persistentContainer.viewContext
         persistenContainer.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
         return persistenContainer
+    }
+    
+    func fetchFavorites() throws -> [FavoriteModel] {
+        let request = FavoriteShow.fetchRequest()
+        let results = try fetchRequest(request)
+        return results.map { FavoriteModel(show: $0) }
+    }
+    
+    func fetchRequest(showId: Int) -> NSFetchRequest<FavoriteShow> {
+        let request = FavoriteShow.fetchRequest()
+        let predicate:NSPredicate = NSPredicate(format: "id == %lld", showId)
+        request.predicate = predicate
+        return request
+    }
+    
+    
+    func saveFavorite(show: ShowModel) -> Bool {
+        guard let favorite = getNew() as? FavoriteShow, let showId = show.id else { return false }
+        favorite.id = Int64(showId)
+        favorite.name = show.name
+        favorite.imageMedium = show.image?.medium
+        favorite.imageOriginal = show.image?.original
+        favorite.imdbURL = show.externals?.imdb
+        favorite.resume = show.summary
+        favorite.rating = show.rating?.average ?? 0
+        saveContext()
+        return true
+    }
+    
+    func isFavorite(showId: Int) throws -> Bool {
+        let request = fetchRequest(showId: showId)
+        let results = try fetchRequest(request)
+        return results.contains(where: { $0.id == showId } )
+    }
+    
+    func getFavoriteShow(id: Int) throws -> FavoriteShow? {
+        let request = fetchRequest(showId: id)
+        let results = try fetchRequest(request)
+        return results.first(where: { $0.id == Int64(id) } )
+    }
+    
+    func fetchRequest(_ request: NSFetchRequest<FavoriteShow>) throws -> [FavoriteShow] {
+        let request = FavoriteShow.fetchRequest()
+        return try getContext().fetch(request)
     }
     
     func getBackgroundContext() -> NSManagedObjectContext {//no ha sido probado y al parecer con solo activar en el proyecto el backgroundmode fetch con eso funciona el segundo plano
@@ -85,6 +131,11 @@ class CoreDataController {
         saveContext()
     }
     
+    func getNew() -> NSManagedObject {
+      NSEntityDescription.insertNewObject(forEntityName: Constants.ENTITY, into: getContext())
+    }
+    
+    @discardableResult
     func deleteItem(object : NSManagedObject) -> Bool {
         
         let managedContext = self.persistentContainer.viewContext
@@ -101,6 +152,15 @@ class CoreDataController {
         return response
     }
     
+    func deleteShow(id: Int) throws {
+        let request = fetchRequest(showId: id)
+        let results = try fetchRequest(request)
+        
+        guard let itemToDelete = results.first(where: { $0.id == Int64(id) } ) else { return }
+        deleteItem(object: itemToDelete)
+    }
+    
+    
     func deleteItem(objectID : NSManagedObjectID?) -> Bool {
         guard let objectID = objectID else {return false}
         let managedContext = self.persistentContainer.viewContext
@@ -115,6 +175,13 @@ class CoreDataController {
         }
         saveContext()
         return response
+    }
+    
+    //Interactor
+    func getFavoritesShows() throws -> [FavoriteShowModel] {
+        let request = FavoriteShow.fetchRequest()
+        let results = try fetchRequest(request)
+        return results.map { FavoriteShowModel(show: $0) }
     }
     
 }

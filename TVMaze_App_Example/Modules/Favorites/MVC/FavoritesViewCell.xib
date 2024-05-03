@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FavoriteViewCell" customModule="TVMaze_App_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="700"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zun-bK-3v0">
+                    <rect key="frame" x="10" y="10" width="340" height="500"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zun-bK-3v0" secondAttribute="height" multiplier="340:500" id="Ckv-Xm-7T9"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFJ-7T-aIY">
+                    <rect key="frame" x="10" y="520" width="340" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="82" id="2we-tI-b5r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-9C-NdW" userLabel="ratingLabel">
+                    <rect key="frame" x="10" y="650" width="340" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="kxX-bg-82W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MyM-9C-NdW" secondAttribute="trailing" constant="10" id="7oz-Fy-heg"/>
+                <constraint firstItem="zun-bK-3v0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="AJ1-Tn-log"/>
+                <constraint firstItem="gFJ-7T-aIY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="FzV-j9-4Zu"/>
+                <constraint firstItem="gFJ-7T-aIY" firstAttribute="top" secondItem="zun-bK-3v0" secondAttribute="bottom" constant="10" id="GK0-wW-ntC"/>
+                <constraint firstAttribute="bottom" secondItem="MyM-9C-NdW" secondAttribute="bottom" constant="10" id="KgM-BW-nfv"/>
+                <constraint firstItem="MyM-9C-NdW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="N0d-KX-V6G"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zun-bK-3v0" secondAttribute="trailing" constant="10" id="QBu-fL-39J"/>
+                <constraint firstItem="zun-bK-3v0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="foh-em-4Li"/>
+                <constraint firstItem="MyM-9C-NdW" firstAttribute="top" secondItem="gFJ-7T-aIY" secondAttribute="bottom" constant="10" id="hMl-2N-WyU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gFJ-7T-aIY" secondAttribute="trailing" constant="10" id="iuS-GY-GLf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageLabel" destination="zun-bK-3v0" id="iOb-kS-Pca"/>
+                <outlet property="ratingLabel" destination="MyM-9C-NdW" id="tIw-aa-SH9"/>
+                <outlet property="titlelabel" destination="gFJ-7T-aIY" id="I0k-Ol-MOj"/>
+            </connections>
+            <point key="canvasLocation" x="-33.587786259541986" y="-116.90140845070422"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

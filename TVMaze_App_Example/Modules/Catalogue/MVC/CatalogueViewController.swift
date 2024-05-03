@@ -51,9 +51,33 @@ final class CatalogueViewController: UITableViewController {
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let show = dataSource.itemIdentifier(for: indexPath), let id = show.id else { return nil }
+        let isFavorite = modelLogic.isFavorite(id: id)
+        
+        let favoriteAction = UIContextualAction(style: .normal, title: isFavorite ? "Quit" : "Favorite") { [self] _, _, handler in
+            modelLogic.toggleFavorite(show: show)
+            dataSource.apply(modelLogic.snapshot, animatingDifferences: true)
+            handler(true)
+        }
+        favoriteAction.image = UIImage.buttonWithSymbolConfiguration(systemName: "star.circle", color: UIColor.systemRed)
+        
+        favoriteAction.backgroundColor = isFavorite ? .systemRed.withAlphaComponent(0.5): .systemYellow.withAlphaComponent(0.5)
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
+    }
+    
+    
+  
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: .shows, object: nil)
     }
 }
 
 
+extension UIImage {
+    static func buttonWithSymbolConfiguration(systemName: String, color: UIColor, font: UIFont.TextStyle = .title3) -> UIImage {
+        UIImage(systemName: systemName, withConfiguration: UIImage.SymbolConfiguration(font: .preferredFont(forTextStyle: .title2)).applying(UIImage.SymbolConfiguration(weight: .bold)))!
+     }
+}

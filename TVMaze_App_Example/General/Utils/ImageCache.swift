@@ -89,8 +89,3 @@ extension UIImageView{
 }
 
 
-extension Notification.Name {
-    static let shows = Notification.Name("SHOW")
-    static let favorites = Notification.Name("FAVORITE")
-    
-}

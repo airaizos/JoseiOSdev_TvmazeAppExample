@@ -12,3 +12,10 @@ extension String {
         return NSLocalizedString(self, comment: self)
     }
 }
+
+extension Notification.Name {
+    static let shows = Notification.Name("SHOW")
+    static let favorites = Notification.Name("FAVORITE")
+    static let detailFavorite = Notification.Name("DETAIL")
+    static let errorFavorite = Notification.Name("ERRORFAVORITE")
+}

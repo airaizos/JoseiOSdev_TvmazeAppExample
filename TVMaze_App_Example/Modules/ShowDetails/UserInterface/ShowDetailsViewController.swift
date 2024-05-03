@@ -99,6 +99,7 @@ class ShowDetailsViewController: TVMazeViewController {
         let deleteAction = UIAlertAction(title: "Delete".localizable(), style: .destructive) { alertAction in
             let favorite = FavoriteShowModel(id: id, show: show)
             (self.presenter as? ShowDetailsPresenter)?.deleteFavorite(favorite: favorite)
+            NotificationCenter.default.post(name: .detailFavorite, object: favorite)
         }
         self.showMessage(title:"TVMaze_App_Example","DeleteAlertMessage".localizable(), actions: [cancelAction, deleteAction], completion: nil)
         

@@ -10,7 +10,7 @@ import UIKit
 final class CatalogueViewController: UITableViewController {
     
     let modelLogic = CatalogueModelLogic.shared
-
+    
     lazy var dataSource: UITableViewDiffableDataSource<Int,ShowModel> = {
         UITableViewDiffableDataSource(tableView: tableView) { [self] tableView, indexPath, show in
             if let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? CatalogueViewCell {
@@ -21,8 +21,8 @@ final class CatalogueViewController: UITableViewController {
                 ? "Rating \(show.rating?.average ?? 0)"
                 : "No rating".localizable()
                 cell.genresLabel.text = show.genres?.sorted(by: <).joined(separator: ", ")
-            
-            return cell
+                
+                return cell
             }  else {
                 return UITableViewCell()
             }
@@ -44,10 +44,10 @@ final class CatalogueViewController: UITableViewController {
             }
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         Task {
-           try await modelLogic.getShows()
+            try await modelLogic.getShows()
         }
     }
     
@@ -67,8 +67,19 @@ final class CatalogueViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [favoriteAction])
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let navigationController else { return }
+        
+        let show = modelLogic.getShow(for: indexPath)
+        
+        let _ = ShowDetailsWireframe(navigationController: navigationController, show: show)
+        
+    }
     
-  
+    
+    func pushView(navigationController: UINavigationController, view: UIViewController) {
+        navigationController.pushViewController(view, animated: true)
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .shows, object: nil)
@@ -79,5 +90,5 @@ final class CatalogueViewController: UITableViewController {
 extension UIImage {
     static func buttonWithSymbolConfiguration(systemName: String, color: UIColor, font: UIFont.TextStyle = .title3) -> UIImage {
         UIImage(systemName: systemName, withConfiguration: UIImage.SymbolConfiguration(font: .preferredFont(forTextStyle: .title2)).applying(UIImage.SymbolConfiguration(weight: .bold)))!
-     }
+    }
 }

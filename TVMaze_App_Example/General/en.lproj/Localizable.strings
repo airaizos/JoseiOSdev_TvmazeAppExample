@@ -14,6 +14,7 @@
 "Cancel" = "Cancel";
 "saveCoreDataError" = "Hubo un problema al guardar este show de TV. ¿Quieres intentar nuevamente?";
 "deleteCoreDataError" = "Hubo un problema al borrar este show de TV. ¿Quieres intentar nuevamente?";
+"loadCoreDataError" = "There was a problem loading your favorite shows, do you want to try again?";
 "RetryAction" = "Retry";
 "openShow" = "Open Show";
 "GeneralServicesError" = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?";

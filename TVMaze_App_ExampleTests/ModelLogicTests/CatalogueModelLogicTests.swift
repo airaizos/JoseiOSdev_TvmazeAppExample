@@ -32,10 +32,4 @@ final class CatalogueModelLogicTests: XCTestCase {
         XCTAssertGreaterThan(finalCount,initialCount)
     }
     
-    func testIsFavorite_ShouldBeTrue() async throws {
-        
-        try await sut.getShows()
-        
-        
-    }
 }

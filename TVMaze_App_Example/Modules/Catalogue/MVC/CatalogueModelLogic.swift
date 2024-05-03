@@ -10,8 +10,8 @@ import UIKit
 final class CatalogueModelLogic {
     static let shared = CatalogueModelLogic()
     
-    let network: TVMazeDataStore
-    let favoriteLogic: FavoriteModelLogic
+    private let network: TVMazeDataStore
+    private let favoriteLogic: FavoriteModelLogic
     
     init(network: TVMazeDataStore = .init(), favoriteLogic: FavoriteModelLogic = .shared) {
         self.network = network
@@ -33,6 +33,10 @@ final class CatalogueModelLogic {
     
     var showsCount: Int {
         shows.count
+    }
+    
+    func getShow(for indexPath: IndexPath) -> ShowModel {
+        shows[indexPath.row]
     }
     
     func getShows() async throws {
